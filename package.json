@@ -1,0 +1,39 @@
+{
+  "name": "edusphere",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names api,web \"npm:dev:api\" \"vite\"",
+    "dev:api": "php -d upload_max_filesize=25M -d post_max_size=26M -S 127.0.0.1:8080 -t ../backend/public ../backend/public/index.php",
+    "build": "vite build",
+    "start": "vite preview --host 127.0.0.1 --port 4173",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "canvas-confetti": "^1.9.4",
+    "framer-motion": "^14.3.0",
+    "lucide-react": "^1.59.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-router-dom": "^7.18.4",
+    "three": "0.147.0",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "22.19.15",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.6",
+    "eslint": "9.39.4",
+    "postcss": "8.5.8",
+    "tailwindcss": "4.1.17",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.5"
+  }
+}
